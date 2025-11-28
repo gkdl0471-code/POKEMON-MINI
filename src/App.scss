@@ -6,9 +6,7 @@ body {
 header{
   background-color: rgb(36, 33, 33);
   color: rgb(231, 228, 40);
-  margin: 0;
-  padding: 10px;
-  border-top: 30px solid rgb(134, 5, 204);
+  border-top: 50px solid rgb(134, 5, 204);
 }
 
 nav {
@@ -48,7 +46,7 @@ main {
     &:hover {
       transform: scale(1.1);
       transition: 0.3s;
-      filter: drop-shadow(0 0 5px rgb(80, 245, 4));
+      filter: drop-shadow(0 0 5px rgb(51, 52, 30));
     }
   }
 }

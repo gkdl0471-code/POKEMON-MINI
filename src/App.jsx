@@ -19,18 +19,18 @@ function App() {
 
   return (
     <>
-      <header className='flex justify-center items-center gap-5'>
-        <img className='w-[70px]' src="src/img/포켓볼.png"/>
-        <h1 className='text-[40px] text-center'>포켓몬 도감</h1>
+      <header className='flex justify-center items-center gap-5 '>
+        <img className='w-[100px] -translate-y-12' src="src/img/포켓볼.png"/>
+        <h1 className='text-[70px] text-center -translate-y-12'>포켓몬 도감</h1>
       </header>
-      <nav className='flex gap-10 justify-center items-center'>
+      <nav className='flex gap-10 justify-center items-center -translate-y-9'>
         <Link to={'/'}>메인</Link>
         <Link to={'/favorite'}>찜목록</Link>
         <input
           onChange={e=> navigate(`/search?pokemon=${e.target.value}`)}
           placeholder="🔍 POKEMON SEARCH"
           className="
-              w-72
+              w-62
               text-white
               placeholder-gray-500
               border-b

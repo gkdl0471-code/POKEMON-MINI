@@ -11,12 +11,13 @@ const CardContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+  margin: 5px;
   padding-bottom: 50px;
   border-radius: 10px;
   font-size: 25px;
   font-weight: 500;
-  color: #282935;
+  color: #070e58;
   letter-spacing: 2px;
 `
 export const Card = ({pokemon}) => {
