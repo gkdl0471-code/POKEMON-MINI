@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
+import FavoriteButton from "./FavoriteButton"
 
 const CardContainer = styled.section`
   background: radial-gradient(circle at 50% 40%, #dbedba -30%, rgba(252, 252, 252, 0) 40%);
@@ -17,16 +18,6 @@ const CardContainer = styled.section`
   font-weight: 500;
   color: #282935;
   letter-spacing: 2px;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  &:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
-  }
-  &:active {
-    transform: translateY(0) scale(0.97);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  }
 `
 export const Card = ({pokemon}) => {
   const navigate = useNavigate()
@@ -37,7 +28,10 @@ export const Card = ({pokemon}) => {
         NO. {String(pokemon.id).padStart(3, '0')}
       </div>
       <img className="w-[200px]" src={pokemon.front}/>
-      <div>{pokemon.name}</div>
+      <div>
+        {pokemon.name}
+        <FavoriteButton pokemonId={pokemon.id} />
+      </div>
     </CardContainer>
   )
 }

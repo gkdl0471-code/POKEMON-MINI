@@ -4,18 +4,18 @@ body {
 }
 
 header{
-  background-color: rgb(118, 4, 248);
+  background-color: rgb(36, 33, 33);
   color: rgb(231, 228, 40);
   margin: 0;
   padding: 10px;
+  border-top: 30px solid rgb(134, 5, 204);
 }
 
 nav {
-  background-color: rgb(19, 21, 40);
-  color: rgb(231, 228, 40);
+  background-color: rgb(255, 255, 255);
   margin: 0;
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
   letter-spacing: 3px;
 }
 
@@ -40,4 +40,15 @@ nav {
   color: rgb(75, 76, 153);
   padding: 10px;
   font-size: 40px;
+}
+
+main {
+  section{
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+      filter: drop-shadow(0 0 5px rgb(80, 245, 4));
+    }
+  }
 }
