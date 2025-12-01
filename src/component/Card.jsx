@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import FavoriteButton from "./FavoriteButton"
+import { memo, useState } from "react"
 
 const CardContainer = styled.section`
   background: radial-gradient(circle at 50% 40%, #dbedba -30%, rgba(252, 252, 252, 0) 40%);
@@ -20,19 +21,27 @@ const CardContainer = styled.section`
   color: #070e58;
   letter-spacing: 2px;
 `
-export const Card = ({pokemon}) => {
+export const Card = memo(({pokemon}) => {
+  const [isImageLoading, setIsImageLoading] = useState(true)
   const navigate = useNavigate()
 
   return (
     <CardContainer onClick={() => navigate(`/detail/${pokemon.id}`)}>
-      <div className="bg-blue-500/40 px-2.5 rounded-2xl mt-3">
-        NO. {String(pokemon.id).padStart(3, '0')}
-      </div>
-      <img className="w-[200px]" src={pokemon.front}/>
-      <div>
-        {pokemon.name}
-        <FavoriteButton pokemonId={pokemon.id} />
+      {isImageLoading? <div className="w-[200px] h-[200px] leading-[120px] text-center flex justify-center items-center">로딩중...</div> : null}
+      <div 
+        onLoad={() => setIsImageLoading(false)}
+        style={{display: isImageLoading ? 'none' : 'block'}}
+      >
+        <div className="bg-blue-500/40 px-2.5 rounded-2xl mt-3 flex justify-center items-center">
+          NO. {String(pokemon.id).padStart(3, '0')}
+        </div>
+        <img className="w-[200px]" src={pokemon.front}/>
+        <div className="flex justify-center items-center">
+          {pokemon.name}
+          <FavoriteButton pokemonId={pokemon.id} />
+        </div>
       </div>
     </CardContainer>
   )
 }
+) 
