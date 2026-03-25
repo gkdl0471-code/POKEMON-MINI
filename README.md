@@ -2,6 +2,10 @@
 
 # 포켓몬 도감 · Pokémon Mini
 
+
+https://github.com/user-attachments/assets/f3812bcd-8c54-4364-9488-b5ce9d004bb2
+
+
 **PokeAPI**를 사용해 1세대부터 수백 마리까지 한국어 이름·도감 설명으로 둘러보는 **React** 미니 도감 앱입니다.
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
